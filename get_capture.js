@@ -1,3 +1,4 @@
+require('dotenv').config();
 const puppeteer = require('puppeteer');
 
 const getCapture = () => {
@@ -14,7 +15,7 @@ const getCapture = () => {
 
 		await Promise.all([
 			page.waitForNavigation({ waitUntil: 'networkidle0' }),
-			page.goto('https://livede55.com/'),
+			page.goto(process.env.URL),
 			page.waitForTimeout(1000),
 		]);
 
